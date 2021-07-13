@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icon/png">
+        <file>images/save .png</file>
+        <file>images/excel.png</file>
+        <file>images/merge.png</file>
+        <file>images/onemerge.png</file>
+    </qresource>
+</RCC>
