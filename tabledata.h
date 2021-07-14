@@ -2,6 +2,7 @@
 #define TABLEDATA_H
 
 #include <QObject>
+#include <QRegExp>
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QTableView>
@@ -13,9 +14,12 @@ class TableData: public QTableView
 public:
     explicit TableData(QObject* parent = 0);
     void setTableModel(QMap<int, QStringList> exceltomap);
-    QStringList getPersonNames();
+    QList<QMap<int, QStringList>> getMergeData();
+    QStringList get_person_names();
     QMap<int, QStringList> getTableModel();
-    void getMergeData(QList<QStringList>names);
+    QStringList remove_same_name(QStringList names_str);
+    QList<QMap<int, QStringList>> set_name_split(QStringList names_str, QStringList new_names_str);
+    QStringList getTableHeader();
 private:
     QStringList headerlist;
     QStandardItem *item;

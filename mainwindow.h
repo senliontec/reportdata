@@ -4,10 +4,12 @@
 #include <QComboBox>
 #include <QDialog>
 #include <QLabel>
+#include <QLineEdit>
 #include <QMainWindow>
 #include <QTableView>
 #include <QStandardItem>
 #include <QProgressBar>
+#include <QPushButton>
 #include <QWidget>
 
 
@@ -31,19 +33,19 @@ public:
     ~MainWindow();
 
 private:
+    ExcelHelper* excelhelper;
     QList<TableData*> tabledatas;
     TableData* curtabledata;
     int getTabCurrentIndex();
     void addTabPage(QList<QMap<int, QStringList>> exceltolist);
     void deleteTabPage();
     void setProgressbarUI();
+    void setSearchUI();
 
 private slots:
     void on_actOpen_Excel_triggered();
 
     void on_actSave_Excel_triggered();
-
-//    void updateCurSheet(int index);
 
     void setCloseTab(int index);
 
